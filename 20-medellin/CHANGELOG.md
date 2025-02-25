@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - WhatsApp integration documentation
 - AI automation and integration documentation
 - Verified core dependencies are installed (tailwind-variants v0.3.1, clsx v2.1.1, tailwind-merge v2.6.0)
+- Created initial restore point tag (restore/initial-setup/2025-02-25)
 
 ### Changed
 
