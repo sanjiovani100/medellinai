@@ -5,6 +5,8 @@ import { Hero } from "@/components/ui/Hero"
 import { Map } from "@/components/ui/Map/Map"
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics"
 import Testimonial from "@/components/ui/Testimonial"
+import AboutSection from "@/components/ui/AboutSection"
+import { EventsSection } from "@/components/ui/EventsSection"
 
 export default function Home() {
   return (
@@ -14,6 +16,12 @@ export default function Home() {
       </div>
       <div className="mt-32 px-4 xl:px-0">
         <Features />
+      </div>
+      <div className="mt-32 px-4 xl:px-0">
+        <AboutSection />
+      </div>
+      <div className="mt-32 px-4 xl:px-0">
+        <EventsSection />
       </div>
       <div className="mt-32 px-4 xl:px-0">
         <Testimonial />

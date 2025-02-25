@@ -1,60 +1,24 @@
 import {
-  RiGithubFill,
-  RiSlackFill,
-  RiTwitterXFill,
-  RiYoutubeFill,
+  RiFacebookFill,
+  RiLinkedinFill,
+  RiWhatsappFill,
 } from "@remixicon/react"
 import Link from "next/link"
-import { SolarLogo } from "../../../public/SolarLogo"
+import { Logo } from "../Logo"
 const CURRENT_YEAR = new Date().getFullYear()
 
 const Footer = () => {
   const sections = {
-    solutions: {
-      title: "Solutions",
+    quickLinks: {
+      title: "Quick Links",
       items: [
-        { label: "Crop Monitoring", href: "#" },
-        { label: "Irrigation Control", href: "#" },
-        { label: "Soil Analytics", href: "#" },
-        { label: "Weather Integration", href: "#" },
-        { label: "Documentation", href: "#" },
-        { label: "Smart Farming Guide", href: "#" },
-        { label: "Equipment", href: "#" },
-      ],
-    },
-    company: {
-      title: "Company",
-      items: [
-        { label: "About us", href: "#" },
-        { label: "Blog", href: "#" },
-        { label: "Careers", href: "#" },
-        { label: "Success Stories", href: "#" },
-        { label: "Sustainability", href: "#" },
-      ],
-    },
-    resources: {
-      title: "Resources",
-      items: [
-        { label: "Farmer Network", href: "#" },
-        {
-          label: "Community",
-          href: "#",
-          external: true,
-        },
-        { label: "Contact", href: "#" },
-        { label: "Support", href: "#" },
+        { label: "About Us", href: "#" },
+        { label: "Upcoming Events", href: "#" },
+        { label: "Become a Speaker", href: "#" },
+        { label: "Community Guidelines", href: "#" },
+        { label: "FAQ", href: "#" },
         { label: "Privacy Policy", href: "#" },
         { label: "Terms of Service", href: "#" },
-        { label: "Report an Issue", href: "#" },
-      ],
-    },
-    partners: {
-      title: "Partners",
-      items: [
-        { label: "Dealer Network", href: "#", external: true },
-        { label: "System Status", href: "#", external: true },
-        { label: "Research Partners", href: "#", external: true },
-        { label: "Integration Guide", href: "#" },
       ],
     },
   }
@@ -141,18 +105,29 @@ const Footer = () => {
             fill="url(#diagonal-footer-pattern)"
           />
         </svg>
-        <div className="mr-auto flex w-full justify-between lg:w-fit lg:flex-col">
+        <div className="mr-auto flex w-full flex-col justify-between lg:w-1/3">
           <Link
             href="/"
             className="flex items-center font-medium text-gray-700 select-none sm:text-sm"
           >
-            <SolarLogo className="ml-2 w-20" />
-
-            <span className="sr-only">Solar Logo (go home)</span>
+            <Logo className="ml-2 w-20" />
+            <span className="sr-only">Medellin AI Logo (go home)</span>
           </Link>
+          
+          <div className="mt-4 ml-2 text-sm text-gray-600">
+            <p className="mb-3">
+              Empowering Medellín's AI community through knowledge sharing, networking, and innovative events.
+            </p>
+            <p className="mb-2">
+              <span className="font-medium">Contact:</span> contact@medellinai.com
+            </p>
+            <p className="mb-4">
+              <span className="font-medium">Location:</span> Medellín, Colombia
+            </p>
+          </div>
 
           <div>
-            <div className="mt-4 flex items-center">
+            <div className="mt-2 flex items-center">
               {/* Social Icons */}
               <Link
                 href="#"
@@ -160,7 +135,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
-                <RiTwitterXFill className="size-5" />
+                <RiLinkedinFill className="size-5" />
               </Link>
               <Link
                 href="#"
@@ -168,7 +143,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
-                <RiYoutubeFill className="size-5" />
+                <RiFacebookFill className="size-5" />
               </Link>
               <Link
                 href="#"
@@ -176,24 +151,16 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
-                <RiGithubFill className="size-5" />
-              </Link>
-              <Link
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
-              >
-                <RiSlackFill className="size-5" />
+                <RiWhatsappFill className="size-5" />
               </Link>
             </div>
-            <div className="ml-2 hidden text-sm text-gray-700 lg:inline">
-              &copy; {CURRENT_YEAR} Solar Technologies, Inc.
+            <div className="ml-2 mt-4 text-sm text-gray-700">
+              &copy; {CURRENT_YEAR} Medellin AI Community
             </div>
           </div>
         </div>
 
-        {/* Footer Sections */}
+        {/* Quick Links Section */}
         {Object.entries(sections).map(([key, section]) => (
           <div key={key} className="mt-10 min-w-44 pl-2 lg:mt-0 lg:pl-0">
             <h3 className="mb-4 font-medium text-gray-900 sm:text-sm">
@@ -213,6 +180,30 @@ const Footer = () => {
             </ul>
           </div>
         ))}
+
+        {/* Stay Connected Section */}
+        <div className="mt-10 min-w-44 pl-2 lg:mt-0 lg:pl-0">
+          <h3 className="mb-4 font-medium text-gray-900 sm:text-sm">
+            Stay Connected
+          </h3>
+          <div className="space-y-4">
+            <Link
+              href="#"
+              className="inline-block rounded-md bg-orange-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-orange-600"
+            >
+              Join our community
+            </Link>
+            <div className="mt-4">
+              <Link
+                href="#"
+                className="flex items-center text-sm text-gray-600 hover:text-gray-900"
+              >
+                <RiWhatsappFill className="mr-2 size-5 text-green-500" />
+                Join our WhatsApp group
+              </Link>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   )

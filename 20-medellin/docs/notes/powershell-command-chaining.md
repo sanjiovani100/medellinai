@@ -1,42 +1,55 @@
-# PowerShell Command Chaining Rule
+# PowerShell Command Chaining Reference
 
-## Rule Description
+## Command Separators in PowerShell
 
-When executing multiple commands in sequence on Windows PowerShell, always use the semicolon (`;`) operator for command chaining instead of the ampersand (`&&`) operator.
+In PowerShell, commands are separated differently than in Bash or other Unix shells:
 
-## Correct Usage
+| Separator | Description | Example |
+|-----------|-------------|---------|
+| `;` | Sequential execution (run commands one after another) | `cd template-solar; npm run dev` |
+| `&&` | NOT VALID in PowerShell | ❌ `cd template-solar && npm run dev` |
+| `\|\|` | NOT VALID for conditional execution in PowerShell | ❌ |
 
+## Correct Ways to Chain Commands in PowerShell
+
+### Sequential Execution
 ```powershell
-# Correct - Using semicolon for command chaining in PowerShell
-cd project-directory; npm install; npm run dev
+cd template-solar; npm run dev
 ```
 
-## Incorrect Usage
-
+### Conditional Execution (if first command succeeds)
 ```powershell
-# Incorrect - Using && for command chaining in PowerShell
-cd project-directory && npm install && npm run dev
+# Using if statement
+if ($?) { command2 }
+
+# Or more explicitly
+if ($LASTEXITCODE -eq 0) { command2 }
 ```
 
-## Explanation
-
-Windows PowerShell uses different syntax for command chaining compared to Bash or Command Prompt:
-
-1. PowerShell uses the semicolon (`;`) as the command separator
-2. The ampersand (`&&`) operator is not recognized as a valid statement separator in PowerShell
-3. Using `&&` will result in a syntax error: "The token '&&' is not a valid statement separator in this version"
-
-## Alternative Approaches
-
-If conditional execution is needed (only run second command if first succeeds), use:
-
+### Running in a Subshell
 ```powershell
-# Run second command only if first succeeds
-if ($?) { second-command }
+# Change directory only for a specific command
+Push-Location template-solar; npm run dev; Pop-Location
 ```
 
-Or use PowerShell's pipeline capabilities when appropriate:
+## Common Examples
 
+### Navigate to directory and run command
 ```powershell
-# Using PowerShell's pipeline
-Get-ChildItem | Where-Object { $_.Length -gt 1MB }
+cd template-solar; npm run dev
+```
+
+### Install dependencies and start development server
+```powershell
+npm install; npm run dev
+```
+
+### Build and then serve if build succeeds
+```powershell
+npm run build; if ($?) { npm run start }
+```
+
+## Remember
+- PowerShell uses semicolons (`;`) for command separation
+- PowerShell does NOT support `&&` or `||` for conditional execution
+- Always use the correct PowerShell syntax for reliable command execution

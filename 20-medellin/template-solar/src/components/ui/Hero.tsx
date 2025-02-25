@@ -4,8 +4,8 @@ import GameOfLife from "./HeroBackground"
 
 export function Hero() {
   return (
-    <section aria-label="hero" className="relative min-h-[80vh] isolate overflow-hidden bg-gradient-to-b from-[#f0562e] to-[#f97316]">
-      <FadeContainer className="relative flex flex-col items-center justify-center py-20">
+    <section aria-label="hero" className="relative min-h-[70vh] isolate overflow-hidden bg-gradient-to-b from-[#f0562e] to-[#f97316]">
+      <FadeContainer className="relative flex flex-col items-center justify-center pt-20 pb-12">
         <FadeDiv className="mx-auto">
           <a
             aria-label="View latest update the changelog page"

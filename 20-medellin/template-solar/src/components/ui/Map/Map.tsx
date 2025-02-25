@@ -10,8 +10,8 @@ import { SVGMap } from "./SVGMap"
 export const Map = () => {
   return (
     <section
-      id="farm-management"
-      aria-labelledby="management-title"
+      id="ai-revolution"
+      aria-labelledby="revolution-title"
       className="relative flex w-full max-w-6xl scroll-my-24 flex-col items-center justify-center overflow-hidden rounded-2xl bg-gray-950 px-10 shadow-2xl shadow-black/50 sm:px-16 md:px-28 lg:mx-auto"
     >
       <div className="absolute left-0 z-10 h-full backdrop-blur-[2px]">
@@ -86,87 +86,39 @@ export const Map = () => {
       </div>
 
       <div className="pt-12 text-base font-semibold tracking-tight text-orange-400 sm:pt-20 sm:text-lg">
-        Farm Management
+        Join Medellín's AI Revolution!
       </div>
       <h2
-        id="management-title"
+        id="revolution-title"
         className="mt-6 max-w-[700px] text-center text-2xl font-semibold tracking-tight text-balance text-white md:text-5xl"
       >
-        Monitoring & Control for Precision Agriculture
+        Connect, learn, and grow with top AI innovators
       </h2>
-      <p className="mt-4 max-w-2xl text-center text-base text-balance text-gray-400 sm:mt-8 sm:text-xl">
-        Complete oversight of your farming operations across fields, irrigation
-        systems, and aerial monitoring, delivering insights even in remote rural
-        locations.
-      </p>
-
-      <div className="relative mt-20 mb-10 ml-[17rem] scale-90 sm:mb-16 md:mt-24 md:ml-0 md:scale-100">
-        <SVGMap className="w-[50rem] shrink-0" />
-        <div className="absolute -top-3 left-[130px]">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Scanning
-            </div>
-            <RiPlaneLine className="relative size-5 rotate-90 text-white" />
-            <div
-              style={{
-                animationDelay: "3.5s",
-              }}
-              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-orange-500/50"
-            ></div>
+      <div className="mt-4 w-full max-w-5xl sm:mt-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg p-4 text-center md:text-left">
+            <p className="text-gray-300 sm:text-lg">
+              Exclusive events including meetups, workshops, and hackathons where you can engage with the AI community.
+            </p>
+          </div>
+          <div className="rounded-lg p-4 text-center md:text-left">
+            <p className="text-gray-300 sm:text-lg">
+              Network and collaborate with AI professionals, startups, and researchers to expand your connections.
+            </p>
+          </div>
+          <div className="rounded-lg p-4 text-center md:text-left">
+            <p className="text-gray-300 sm:text-lg">
+              Access premium resources with insights, tools, and training to accelerate your AI journey.
+            </p>
           </div>
         </div>
-        <div className="absolute top-[73px] left-[243px]">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Irrigating
-            </div>
-            <Icons.QuadCopter className="relative size-5 rotate-90 text-white" />
-            <div
-              style={{
-                animationDelay: "3.5s",
-              }}
-              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-orange-500/50"
-            ></div>
-          </div>
-        </div>
-        <div className="absolute top-32 right-[300px]">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Scanning
-            </div>
-            <RiPlaneLine className="relative size-5 rotate-90 text-white" />
-            <div
-              style={{
-                animationDelay: "3.5s",
-              }}
-              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-orange-500/50"
-            ></div>
-          </div>
-        </div>
-        <div className="absolute top-20 right-[390px]">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <RiHome9Fill className="relative size-5 text-white" />
-          </div>
-        </div>
-        <div className="absolute top-12 right-[430px]">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <div className="absolute -top-4 -right-7 flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Idle
-            </div>
-            <RiTruckFill className="relative size-5 text-white" />
-          </div>
-        </div>
-        <div className="absolute top-9 right-56">
-          <div className="relative flex items-center justify-center">
-            <RiSignalTowerFill className="z-10 size-5 text-white" />
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15 backdrop-blur-sm"></div>
-          </div>
+        <div className="mt-8 mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a href="#" className="rounded-full bg-orange-500 px-6 py-2 font-medium text-white transition-colors hover:bg-orange-600">
+            Join Now
+          </a>
+          <a href="#" className="rounded-full bg-gray-800 px-6 py-2 font-medium text-white transition-colors hover:bg-gray-700">
+            Explore Events
+          </a>
         </div>
       </div>
     </section>

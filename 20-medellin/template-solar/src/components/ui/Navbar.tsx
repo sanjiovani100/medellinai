@@ -3,10 +3,10 @@
 import { siteConfig } from "@/app/siteConfig"
 import useScroll from "@/lib/useScroll"
 import { cx } from "@/lib/utils"
-import { RiCloseFill, RiMenuFill } from "@remixicon/react"
+import { RiCloseFill, RiMenuFill, RiUserLine } from "@remixicon/react"
 import Link from "next/link"
 import React from "react"
-import { SolarLogo } from "../../../public/SolarLogo"
+import { Logo } from "../Logo"
 import { Button } from "../Button"
 
 export function NavBar() {
@@ -25,33 +25,51 @@ export function NavBar() {
       <div className="w-full md:my-auto">
         <div className="relative flex items-center justify-between">
           <Link href={siteConfig.baseLinks.home} aria-label="Home">
-            <span className="sr-only">Solar Tech Logo</span>
-            <SolarLogo className="w-22" />
+            <span className="sr-only">Medellin AI Logo</span>
+            <Logo className="w-22" />
           </Link>
           <nav className="hidden sm:block md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
-            <div className="flex items-center gap-10 font-medium">
-              <Link className="px-2 py-1 text-gray-900" href="#solutions">
-                Solutions
+            <div className="flex items-center gap-6 font-medium">
+              <Link className="px-2 py-1 text-gray-900 hover:text-orange-500 transition-colors" href={siteConfig.baseLinks.home}>
+                Home
               </Link>
-              <Link className="px-2 py-1 text-gray-900" href="#farm-management">
-                Farm Management
+              <Link className="px-2 py-1 text-gray-900 hover:text-orange-500 transition-colors" href={siteConfig.baseLinks.events}>
+                Events
               </Link>
-              <Link className="px-2 py-1 text-gray-900" href="#solar-analytics">
-                Analytics
+              <Link className="px-2 py-1 text-gray-900 hover:text-orange-500 transition-colors" href={siteConfig.baseLinks.resources}>
+                Resources
+              </Link>
+              <Link className="px-2 py-1 text-gray-900 hover:text-orange-500 transition-colors" href={siteConfig.baseLinks.community}>
+                Community
+              </Link>
+              <Link className="px-2 py-1 text-gray-900 hover:text-orange-500 transition-colors" href={siteConfig.baseLinks.about}>
+                About
               </Link>
             </div>
           </nav>
-          <Button
-            variant="secondary"
-            className="hidden h-10 font-semibold sm:block"
-          >
-            Get a quote
-          </Button>
+          <div className="hidden sm:flex items-center gap-2">
+            <Link href={siteConfig.auth.signIn}>
+              <Button
+                variant="ghost"
+                className="h-10 font-medium"
+              >
+                Sign In
+              </Button>
+            </Link>
+            <Link href={siteConfig.auth.register}>
+              <Button
+                variant="primary"
+                className="h-10 font-medium bg-orange-500 hover:bg-orange-600 text-white"
+              >
+                Register
+              </Button>
+            </Link>
+          </div>
           <Button
             onClick={() => setOpen(!open)}
             variant="secondary"
             className="p-1.5 sm:hidden"
-            aria-label={open ? "CloseNavigation Menu" : "Open Navigation Menu"}
+            aria-label={open ? "Close Navigation Menu" : "Open Navigation Menu"}
           >
             {!open ? (
               <RiMenuFill
@@ -74,18 +92,33 @@ export function NavBar() {
         >
           <ul className="space-y-4 font-medium">
             <li onClick={() => setOpen(false)}>
-              <Link href="#solutions">Solutions</Link>
+              <Link href={siteConfig.baseLinks.home}>Home</Link>
             </li>
             <li onClick={() => setOpen(false)}>
-              <Link href="#farm-management">Farm Management</Link>
+              <Link href={siteConfig.baseLinks.events}>Events</Link>
             </li>
             <li onClick={() => setOpen(false)}>
-              <Link href="#solar-analytics">Analytics</Link>
+              <Link href={siteConfig.baseLinks.resources}>Resources</Link>
+            </li>
+            <li onClick={() => setOpen(false)}>
+              <Link href={siteConfig.baseLinks.community}>Community</Link>
+            </li>
+            <li onClick={() => setOpen(false)}>
+              <Link href={siteConfig.baseLinks.about}>About</Link>
             </li>
           </ul>
-          <Button variant="secondary" className="text-lg">
-            Get a quote
-          </Button>
+          <div className="flex flex-col gap-2">
+            <Link href={siteConfig.auth.signIn}>
+              <Button variant="ghost" className="w-full justify-center text-lg">
+                Sign In
+              </Button>
+            </Link>
+            <Link href={siteConfig.auth.register}>
+              <Button variant="primary" className="w-full justify-center text-lg bg-orange-500 hover:bg-orange-600 text-white">
+                Register
+              </Button>
+            </Link>
+          </div>
         </nav>
       </div>
     </header>
