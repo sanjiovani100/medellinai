@@ -27,7 +27,7 @@ const Footer = () => {
     <div className="px-4 xl:px-0">
       <footer
         id="footer"
-        className="relative mx-auto flex max-w-6xl flex-wrap pt-4"
+        className="relative mx-auto flex max-w-6xl flex-wrap justify-between pt-4"
       >
         {/* Vertical Lines */}
         <div className="pointer-events-none inset-0">
@@ -105,7 +105,7 @@ const Footer = () => {
             fill="url(#diagonal-footer-pattern)"
           />
         </svg>
-        <div className="mr-auto flex w-full flex-col justify-between lg:w-1/3">
+        <div className="flex w-full flex-col justify-between lg:w-1/4">
           <Link
             href="/"
             className="flex items-center font-medium text-gray-700 select-none sm:text-sm"
@@ -113,13 +113,15 @@ const Footer = () => {
             <Logo className="ml-2 w-20" />
             <span className="sr-only">Medellin AI Logo (go home)</span>
           </Link>
-          
+
           <div className="mt-4 ml-2 text-sm text-gray-600">
             <p className="mb-3">
-              Empowering Medellín's AI community through knowledge sharing, networking, and innovative events.
+              Empowering Medellín's AI community through knowledge sharing,
+              networking, and innovative events.
             </p>
             <p className="mb-2">
-              <span className="font-medium">Contact:</span> contact@medellinai.com
+              <span className="font-medium">Contact:</span>{" "}
+              contact@medellinai.com
             </p>
             <p className="mb-4">
               <span className="font-medium">Location:</span> Medellín, Colombia
@@ -154,7 +156,7 @@ const Footer = () => {
                 <RiWhatsappFill className="size-5" />
               </Link>
             </div>
-            <div className="ml-2 mt-4 text-sm text-gray-700">
+            <div className="mt-4 ml-2 text-sm text-gray-700">
               &copy; {CURRENT_YEAR} Medellin AI Community
             </div>
           </div>
@@ -162,7 +164,10 @@ const Footer = () => {
 
         {/* Quick Links Section */}
         {Object.entries(sections).map(([key, section]) => (
-          <div key={key} className="mt-10 min-w-44 pl-2 lg:mt-0 lg:pl-0">
+          <div
+            key={key}
+            className="mt-10 min-w-44 pl-2 lg:mt-0 lg:w-1/4 lg:pl-0"
+          >
             <h3 className="mb-4 font-medium text-gray-900 sm:text-sm">
               {section.title}
             </h3>
@@ -182,7 +187,7 @@ const Footer = () => {
         ))}
 
         {/* Stay Connected Section */}
-        <div className="mt-10 min-w-44 pl-2 lg:mt-0 lg:pl-0">
+        <div className="mt-10 min-w-44 pl-2 lg:mt-0 lg:w-1/4 lg:pl-0">
           <h3 className="mb-4 font-medium text-gray-900 sm:text-sm">
             Stay Connected
           </h3>
